@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block content %}
+<p>您设想的事件是：</p>
+<p id="the_event" class="hint">{{ event }}</p>
+<br>
+<p>请您回忆您方才<strong>闭眼想象过程中</strong>脑海里出现的<strong>所有</strong>内容，并在下方用<strong>简洁</strong>的文字尽可能<strong>完整、准确</strong>地描述它们（尽量不要删改）</p>
+{% formfield player.dscp_emo %}
+{% next_button %}
+
+{% endblock %}

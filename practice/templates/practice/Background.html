@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block content %}
+<p>请您回忆从今天起的一年前您的境况（回忆即可，不用回答），并回答以下问题</p>
+<br>
+<form action="" method="post">
+    <div class="form-group required">
+        <div class="controls  field-age_year_before">
+            <p>1. 您在一年前的年龄是<input type="number" name="age_year_before" required="" id="id_age_year_before"
+                       class="form-check-input" placeholder="数字">
+                <span style="position: absolute; margin-left:60px">岁</span>
+            </p>
+        </div>
+        <div class="controls field-city_before">
+            <p>
+                2. 您在一年前主要生活在
+                <input type="text" name="city_before" required="" id="id_city_before"
+                       class="form-check-input" placeholder="城市">
+            </p>
+        </div>
+    </div>
+</form>
+
+{{ form.age_year_before.errors }}
+{{ form.city_before.errors }}
+
+    {% next_button %}
+
+{% endblock %}

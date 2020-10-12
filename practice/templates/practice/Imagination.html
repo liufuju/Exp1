@@ -1,0 +1,11 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+<p>您回忆的事件是：</p>
+<p id="the_event" class="hint">{{ event }}</p>
+<br>
+<p>现在请您闭上眼睛，回忆这个事件发生时的状况。回忆时长约1分钟。</p>
+{% next_button %}
+
+{% endblock %}

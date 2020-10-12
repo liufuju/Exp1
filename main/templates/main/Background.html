@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block content %}
+<p>请您大致预期从今天起的未来一年后您的境况（预期即可，不用回答），并回答以下问题</p>
+<br>
+<form action="" method="post">
+    <div class="form-group required">
+        <div class="controls  field-age_year_later">
+            <p>1. 您在一年后的年龄将会是<input type="number" name="age_year_later" required="" id="id_age_year_later"
+                       class="form-check-input" placeholder="数字">
+                <span style="position: absolute; margin-left:60px">岁</span>
+            </p>
+        </div>
+        <div class="controls field-city_later">
+            <p>
+                2. 您在一年后将会生活在
+                <input type="text" name="city_later" required="" id="id_city_later"
+                       class="form-check-input" placeholder="城市">
+            </p>
+        </div>
+    </div>
+</form>
+
+{{ form.age_year_later.errors }}
+{{ form.city_later.errors }}
+
+    {% next_button %}
+
+{% endblock %}

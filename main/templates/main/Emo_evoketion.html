@@ -1,0 +1,23 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
+<p class="title"><strong>No. {{ round_number }}</strong></p>
+<br>
+<p id="back_info" class="hint">一年之后，您是{{ age }}岁，在{{ city_later }}生活</p>
+<br>
+<p>请您设想一个发生在一年以后的事件，在事件中：</p>
+<p id="emo_dscp" class="hint">{{ emo_dscp }}</p>
+<br>
+<p>这个事件应当：</p>
+<ol>
+    <li>有明确的发生地点与时间</li>
+    <li>持续时间不超过24小时</li>
+</ol>
+<br>
+<p>请您用一句话描述该事件的大致内容</p>
+{% formfield player.short_dscp %}
+
+{% next_button %}
+
+{% endblock %}

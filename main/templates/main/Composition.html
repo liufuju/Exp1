@@ -1,0 +1,85 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+
+{% block content %}
+<p>请您<strong>作答</strong>以下问题（输入大写字母）</p>
+<br>
+<form action="" method="post">
+    <div class="form-group required">
+        <div id='cmp_pic1_form' class="controls  field-cmp_response1" style="display: block">
+            <div><img src="{% static cmp_pic1 %}" alt="cmp_pic1" class="cmp_pic"></div>
+            <br>
+            <div class="cmp_ques">
+                <p><strong>1.</strong> 上图1中由小字母组成的大字母是
+                    <input type="text" name="cmp_response1" required="" id="id_cmp_response1"
+                           class="form-check-input">
+                </p>
+            </div>
+
+            <br>
+            <br>
+        </div>
+        <div id='cmp_pic2_form' class="controls  field-cmp_response1" style="display: none">
+            <div><img src="{% static cmp_pic2 %}" alt="cmp_pic2" class="cmp_pic"></div>
+            <br>
+            <div class="cmp_ques">
+                <p><strong>2.</strong> 上图2中由小字母组成的大字母是
+                    <input type="text" name="cmp_response2" required="" id="id_cmp_response2"
+                           class="form-check-input">
+                </p>
+            </div>
+
+            <br>
+            <br>
+        </div>
+        <div id='cmp_pic3_form' class="controls  field-cmp_response1" style="display: none">
+            <div><img src="{% static cmp_pic3 %}" alt="'cmp_pic3" class="cmp_pic"></div>
+            <br>
+            <div class="cmp_ques">
+                <p><strong>3.</strong> 上图3中由小字母组成的大字母是
+                    <input type="text" name="cmp_response3" required="" id="id_cmp_response3"
+                           class="form-check-input">
+                </p>
+            </div>
+
+        </div>
+    </div>
+</form>
+{% next_button %}
+
+{{ form.cmp_response1.errors }}
+{{ form.cmp_response2.errors }}
+{{ form.cmp_response3.errors }}
+
+{% block main_script %}
+<script>
+    let cmp_ques1 = document.querySelector('#cmp_pic1_form');
+    let cmp_ques2 = document.querySelector('#cmp_pic2_form');
+    cmp_ques1.addEventListener('change', ques1);
+    cmp_ques2.addEventListener('change', ques2);
+
+    function ques1() {
+        let cmp_ques1 = document.querySelector('#cmp_pic1_form');
+        let cmp_ques2 = document.querySelector('#cmp_pic2_form');
+        let ans1 = cmp_ques1.value;
+        if (ans1 != 'none') {
+            // cmp_ques1.style.display = 'none';
+            cmp_ques2.style.display = 'block';
+        }
+    }
+
+    function ques2() {
+        let cmp_ques2 = document.querySelector('#cmp_pic2_form');
+        let cmp_ques3 = document.querySelector('#cmp_pic3_form');
+        let ans2 = cmp_ques2.value;
+        if (ans2 != 'none') {
+            //cmp_ques2.style.display = 'none';
+            cmp_ques3.style.display = 'block';
+        }
+    }
+
+
+</script>
+{% endblock %}
+{% endblock %}
