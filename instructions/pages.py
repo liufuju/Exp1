@@ -40,7 +40,7 @@ page_sequence = [Instruction, Alignment_info]
 def order_retrieval(order_path):
     emotions = ['amusement', 'desire', 'happy', 'relaxation', 'fear', 'anger', 'sadness', 'bored']
     order = []
-    order_code = 0
+    order_code = '0'
     flag = 0
     order_data = pandas.read_excel(order_path, sheet_name=0)
     for i in range(4):

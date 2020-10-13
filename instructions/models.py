@@ -32,7 +32,7 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     name = models.StringField(label='您的姓名')
-    student_id = models.IntegerField(label='您的学号', max=10000)
+    student_id = models.IntegerField(label='您的学号', max=9999999999999999)
     exp_date = models.StringField(label='实验日期（年/月/日）')
     emo_order = models.StringField()
     emo_order_code = models.StringField()

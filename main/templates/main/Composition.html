@@ -46,11 +46,13 @@
         </div>
     </div>
 </form>
-{% next_button %}
 
 {{ form.cmp_response1.errors }}
 {{ form.cmp_response2.errors }}
 {{ form.cmp_response3.errors }}
+
+
+{% next_button %}
 
 {% block main_script %}
 <script>
@@ -78,7 +80,6 @@
             cmp_ques3.style.display = 'block';
         }
     }
-
 
 </script>
 {% endblock %}

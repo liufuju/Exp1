@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block content %}
-<p>实验主要部分已结束。</p>
+<p>实验主要部分已结束，您可稍事休息，然后填写如下问题。</p>
 <br>
 <p>您在实验进行过程中是否有遇到任何问题或阻碍？（页面设计不合理等等）</p>
 {% formfield player.difficulty_debrief %}
@@ -20,5 +20,13 @@
 {% formfield player.purpose_debrief %}
 
     {% next_button %}
+
+
+<audio
+        src="{% static 'sound/test1.m4a' %}"
+        autoplay
+        class="before_button">
+</audio>
+
 
 {% endblock %}

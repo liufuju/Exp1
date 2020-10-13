@@ -2,7 +2,7 @@
 {% load otree static %}
 
 {% block content %}
-<p>请您<strong>阅读</strong>以下问题</p>
+<p>请您<strong>阅读并理解</strong>以下问题（<strong>不用选择</strong>）</p>
 <br>
 <br>
 <br>
@@ -197,5 +197,11 @@
 
 
 {% next_button %}
+<audio
+        src="{% static 'sound/test1.m4a' %}"
+        autoplay
+        class="before_button">
+</audio>
+
 
 {% endblock %}

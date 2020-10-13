@@ -199,9 +199,15 @@
 {{ form.self_emo.errors }}
 {{ form.clear_emo.errors }}
 
-{% next_button %}
 
-{% block main_script %}
+{% next_button %}
+<audio
+        src="{% static 'sound/test1.m4a' %}"
+        autoplay
+        class="before_button">
+</audio>
+
+{% block practice_script %}
 <script>
     let self_emo = document.getElementById('self_emo');
     self_emo.addEventListener('click', hide_it);
@@ -213,15 +219,14 @@
         if (self_radio.checked) {
             clear_emo.style.display = 'none';
             clear_radio.checked = 1;
-        }
-        else {
+        } else {
             clear_radio.checked = false;
             clear_emo.style.display = 'table';
         }
     }
+
 </script>
 {% endblock %}
-
 
 
 {% endblock %}
