@@ -40,9 +40,9 @@ class Composition(Page):
         self.player.cmp_file3, self.player.cmp_ans3 = information[2][0], information[2][1]
 
         return dict(
-            cmp_pic1='compositions\\' + self.player.cmp_file1,
-            cmp_pic2='compositions\\' + self.player.cmp_file2,
-            cmp_pic3='compositions\\' + self.player.cmp_file3
+            cmp_pic1='compositions/' + self.player.cmp_file1,
+            cmp_pic2='compositions/' + self.player.cmp_file2,
+            cmp_pic3='compositions/' + self.player.cmp_file3
         )
 
     form_model = 'player'
