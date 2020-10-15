@@ -55,12 +55,15 @@ class Emo_evoketion(Page):
         emo_dscp = self.participant.vars['emo_dscp'][self.round_number - 1]
         age = self.participant.vars['age_year_later']
         city_later = self.participant.vars['city_later']
+        emo_evoking_sound = 'sound/{}.m4a'.format(emotion)
+
         return dict(
             emotion=emotion,
             emo_dscp=emo_dscp,
             age=age,
             city_later=city_later,
-            round_number=self.round_number
+            round_number=self.round_number,
+            emo_evoking_sound=emo_evoking_sound
         )
 
     def before_next_page(self):

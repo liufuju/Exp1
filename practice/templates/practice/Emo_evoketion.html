@@ -10,13 +10,31 @@
 <br>
 <p>这个事件应当：</p>
 <ol>
-    <li>有明确的发生地点与时间</li>
+    <li>有明确的发生时间与地点</li>
     <li>持续时间不超过24小时</li>
 </ol>
 <br>
 <p>请您用一句话描述该事件的大致内容</p>
 {% formfield player.short_dscp %}
 
-{% next_button %}
+<div class="next_button_after">{% next_button %}</div>
+<audio
+        src="{% static 'sound/prac_emo_evoking.m4a' %}"
+        autoplay
+        class="before_button">
+</audio>
+
+{% block practice_script %}
+<script>
+    let audio = document.querySelector('.before_button');
+    audio.addEventListener('ended', show_button);
+
+    function show_button() {
+        let next_button = document.querySelector('.next_button_after');
+        next_button.style.display = 'block';
+    }
+</script>
+
+{% endblock %}
 
 {% endblock %}
