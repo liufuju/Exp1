@@ -5,7 +5,7 @@
 <p>您回忆的事件是：</p>
 <p id="the_event" class="hint">{{ event }}</p>
 <br>
-<p>现在请您闭上眼睛，回忆这个事件发生时的状况。回忆时长约1分钟。</p>
+<p>现在请您闭上眼睛，回忆这个事件发生时的状况。回忆时长约45s。</p>
 
 
 <div class="next_button_after">{% next_button %}</div>
@@ -26,7 +26,7 @@
     audio1.addEventListener('ended', run_timmer);
 
     function run_timmer() {
-        setTimeout(play_audio2, 60000);
+        setTimeout(play_audio2, 45000);
     }
 
     function play_audio2() {
